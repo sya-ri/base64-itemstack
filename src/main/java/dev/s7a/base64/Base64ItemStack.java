@@ -13,18 +13,18 @@ public class Base64ItemStack {
     private Base64ItemStack() {
     }
 
-    public static @NotNull String fromItemStack(@NotNull ItemStack item) throws Base64ConvertException {
+    public static @NotNull String encode(@NotNull ItemStack item) throws Base64ConvertException {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
              BukkitObjectOutputStream dataOutput = new BukkitObjectOutputStream(outputStream)) {
             dataOutput.writeObject(item);
-            return Base64Coder.encodeLines(outputStream.toByteArray());
+            return new String(Base64Coder.encode(outputStream.toByteArray()));
         } catch (Exception exception) {
             throw new Base64ConvertException(exception);
         }
     }
 
-    public static @NotNull ItemStack toItemStack(@NotNull String base64) throws Base64ConvertException {
-        try (ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(base64));
+    public static @NotNull ItemStack decode(@NotNull String base64) throws Base64ConvertException {
+        try (ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decode(base64));
              BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream)) {
             return (ItemStack) dataInput.readObject();
         } catch (Exception exception) {

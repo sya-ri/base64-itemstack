@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
     }
 
     private void check(String name, ItemStack itemStack) {
-        String base64 = Base64ItemStack.fromItemStack(itemStack);
-        check(name, base64, Objects.equals(Base64ItemStack.toItemStack(base64), itemStack));
+        String base64 = Base64ItemStack.encode(itemStack);
+        check(name, base64, Objects.equals(Base64ItemStack.decode(base64), itemStack));
     }
 }
