@@ -11,6 +11,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         check("stone", new ItemStack(Material.STONE, 5));
+        check("null", null);
     }
 
     private void check(String name, String base64, boolean match) {
