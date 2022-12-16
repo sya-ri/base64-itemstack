@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.s7a:base640-itemstack:1.0.0")
+    implementation("dev.s7a:base64-itemstack:1.0.0")
 }
 ```
 
