@@ -19,7 +19,7 @@ public class Main extends JavaPlugin {
         builder.append(name);
         builder.append(": ");
         if (base64.length() < 32) {
-            builder.append(base64);
+            builder.append(base64.replace("\n", ""));
         } else {
             builder.append(base64.substring(0, 32).replace("\n", ""));
             builder.append("...");
