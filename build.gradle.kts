@@ -25,7 +25,7 @@ allprojects {
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.19.3-R0.1-SNAPSHOT")
-    compileOnly("org.jetbrains:annotations:26.0.0")
+    compileOnly("org.jetbrains:annotations:26.0.1")
 }
 
 val sourceJar by tasks.registering(Jar::class) {
