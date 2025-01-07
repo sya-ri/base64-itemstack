@@ -10,7 +10,7 @@ plugins {
     id("org.cadixdev.licenser") version "0.6.1"
     id("com.github.johnrengelman.shadow") version "8.1.1" apply false
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0" apply false
-    id("dev.s7a.gradle.minecraft.server") version "3.2.0" apply false
+    id("dev.s7a.gradle.minecraft.server") version "3.2.1" apply false
 }
 
 group = "dev.s7a"
